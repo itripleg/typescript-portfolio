@@ -11,7 +11,7 @@ type Inputs = {
 };
 
 export default function Contact({}: Props) {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm<FormData>();
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     //   console.log("type of onSubmit", onSubmit);
