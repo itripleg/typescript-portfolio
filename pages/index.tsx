@@ -1,86 +1,104 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
+import type { GetStaticProps } from "next";
+import Head from "next/head";
+// import Image from "next/image";
+import About from "../components/About";
+import Header from "../components/Header";
+import Hero from "../components/Hero";
+import WorkExperience from "../components/WorkExperience";
+import Skills from "../components/Skills";
+import Projects from "../components/Projects";
+import Contact from "../components/Contact";
+import Chatbot from "../components/Chatbot";
+import Link from "next/link";
+import { PageInfo, Skill, Project, Social, Experience } from "../typings";
+import { fetchSkills } from "../utils/fetchSkills";
+import { fetchSocials } from "../utils/fetchSocials";
+import { fetchPageInfo } from "../utils/fetchPageInfo";
+import { fetchExperiences } from "../utils/fetchExperiences";
+import { fetchProjects } from "../utils/fetchProjects";
+import BreadCrumbs from "../components/BreadCrumbs";
 
-const Home: NextPage = () => {
+type Props = {
+  pageInfo: PageInfo;
+  skills: Skill[];
+  projects: Project[];
+  socials: Social[];
+  experiences: Experience[];
+};
+
+const Home = ({ pageInfo, skills, projects, socials, experiences }: Props) => {
+  // console.log(skills);
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div
+      className="bg-[rgb(36,36,36)] text-white h-screen
+    snap-y snap-mandatory z-0 overflow-x-hidden scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-white"
+    >
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Josh Bell Dev</title>
       </Head>
-
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
-            pages/index.tsx
-          </code>
-        </p>
-
-        <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and its API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className="flex h-24 w-full items-center justify-center border-t">
-        <a
-          className="flex items-center justify-center gap-2"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-        </a>
-      </footer>
+      <Header socials={socials} />
+      <Chatbot />
+      <section id="hero" className="snap-start">
+        <Hero pageInfo={pageInfo} />
+      </section>
+      <section
+        id="about"
+        className="snap-center scroll-smooth transition duration-300 ease-in-out"
+      >
+        <About pageInfo={pageInfo} />
+      </section>
+      <section
+        id="experience"
+        className="snap-center scroll-smooth transition duration-300 ease-in-out"
+      >
+        <WorkExperience experiences={experiences} />
+      </section>
+      <section
+        id="skills"
+        className="snap-start scroll-smooth transition duration-300 ease-in-out"
+      >
+        <Skills skills={skills} />
+      </section>
+      <section
+        id="projects"
+        className="snap-center scroll-smooth transition duration-300 ease-in-out"
+      >
+        <Projects projects={projects} />
+      </section>
+      <section
+        id="contact"
+        className="snap-center scroll-smooth transition duration-300 ease-in-out"
+      >
+        <Contact />
+      </section>
+      <Link href={"https://buncombe.tech/"}>
+        <footer className="sticky bottom-0 hidden">
+          <div>
+            <img
+              src="https://buncombe.tech/me_mask.jpg"
+              alt=""
+              className="w-20 h-20 z-30"
+            />
+          </div>
+        </footer>
+      </Link>
+      {/* <BreadCrumbs /> */}
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  console.log("Getting static props...");
+  const pageInfo: PageInfo = await fetchPageInfo();
+  const skills: Skill[] = await fetchSkills();
+  const socials: Social[] = await fetchSocials();
+  const experiences: Experience[] = await fetchExperiences();
+  const projects: Project[] = await fetchProjects();
+
+  return {
+    props: { pageInfo, skills, socials, experiences, projects },
+    revalidate: 10,
+  };
+};
