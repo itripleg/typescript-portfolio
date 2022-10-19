@@ -12,7 +12,7 @@ export default function Projects({ projects }: Props) {
     max-w-full justify-evenly mx-auto items-center z-0"
     >
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-200/90 text-2xl">
-        <span className="hidden md:inline-flex px-8">My</span>
+        <span className=" md:inline-flex px-8">My</span>
         Projects
       </h3>
       <div
@@ -31,7 +31,7 @@ export default function Projects({ projects }: Props) {
               initial={{ opacity: 0, y: -200 }}
               transition={{ duration: 0.5 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
             />
             <div>
               <h1 className="text-4xl py-4">{project.name}</h1>
