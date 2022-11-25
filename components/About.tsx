@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { urlFor } from "../sanity";
 import { PageInfo } from "../typings";
 
@@ -43,26 +44,26 @@ export default function About({ pageInfo }: Props) {
             Full Stack developer. Crypto and Blockchain enthusiast. I love
             working with bleeding-edge technology and helping decentralize the
             web. Based in Asheville, North Carolina. I built this page with
-            💖using{" "}
-            <a href="http://nextjs.org" className="underline">
+            💖using
+            <Link href="http://nextjs.org" className="underline">
               Next.js
-            </a>{" "}
-            and{" "}
-            <a href="http://tailwindcss.com" className="underline">
-              {" "}
+            </Link>
+            and
+            <Link href="http://tailwindcss.com" className="underline">
               Tailwind CSS
-            </a>
-            . Hosted on{" "}
-            <a href="https://www.netlify.com/" className="underline">
+            </Link>
+            . Hosted on
+            <Link href="https://www.netlify.com/" className="underline">
               Netlify
-            </a>{" "}
-            via handwritten code in my{" "}
-            <a
+            </Link>
+            via handwritten code in my
+            <Link
               href="https://github.com/itripleg/next-portfolio-code"
               className="underline"
             >
-              Github.
-            </a>
+              Github. Also infused with
+              <Link href="https://sanity.io/">Sanity.io!</Link>
+            </Link>
           </p>
         </motion.div>
       </div>

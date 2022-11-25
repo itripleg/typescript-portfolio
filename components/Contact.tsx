@@ -52,14 +52,15 @@ export default function Contact({}: Props) {
 
   return (
     <div className="mb-4 relative flex flex-col h-screen text-left md:flex-row max-w-7xl justify-evenly mx-auto items-center">
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-200/90 text-2xl ">
+      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-200/90 text-2xl text-center">
         contact me
       </h3>
-      <div className="pt-20" />
-      <div className="hidden absolute sm:flex top-[30%] left-[38%]">
+      <div className="lg:absolute lg:mr-[200px]">
+        <ContactForm />
+      </div>
+      <div className="lg:absolute lg:right-0 lg:mr-[200px]">
         <Logo />
       </div>
-      <ContactForm />
     </div>
   );
 }
