@@ -89,16 +89,16 @@ const Home = ({ pageInfo, skills, projects, socials, experiences }: Props) => {
 
 export default Home;
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  console.log("Getting static props...");
-  const pageInfo: PageInfo = await fetchPageInfo();
-  const skills: Skill[] = await fetchSkills();
-  const socials: Social[] = await fetchSocials();
-  const experiences: Experience[] = await fetchExperiences();
-  const projects: Project[] = await fetchProjects();
+// export const getStaticProps: GetStaticProps<Props> = async () => {
+//   console.log("Getting static props...");
+//   const pageInfo: PageInfo = await fetchPageInfo();
+//   const skills: Skill[] = await fetchSkills();
+//   const socials: Social[] = await fetchSocials();
+//   const experiences: Experience[] = await fetchExperiences();
+//   const projects: Project[] = await fetchProjects();
 
-  return {
-    props: { pageInfo, skills, socials, experiences, projects },
-    revalidate: 10,
-  };
-};
+//   return {
+//     props: { pageInfo, skills, socials, experiences, projects },
+//     revalidate: 10,
+//   };
+// };
