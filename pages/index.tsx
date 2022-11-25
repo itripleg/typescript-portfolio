@@ -28,63 +28,7 @@ type Props = {
 
 const Home = ({ pageInfo, skills, projects, socials, experiences }: Props) => {
   // console.log(skills);
-  return (
-    <div
-      className="bg-[rgb(36,36,36)] text-white h-screen
-    snap-y snap-mandatory z-0 overflow-x-hidden scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-white"
-    >
-      <Head>
-        <title>Josh Bell Dev</title>
-      </Head>
-      <Header socials={socials} />
-      <Chatbot />
-      <section id="hero" className="snap-start">
-        <Hero pageInfo={pageInfo} />
-      </section>
-      <section
-        id="about"
-        className="snap-center scroll-smooth transition duration-300 ease-in-out"
-      >
-        <About pageInfo={pageInfo} />
-      </section>
-      {/* <section
-        id="experience"
-        className="snap-center scroll-smooth transition duration-300 ease-in-out"
-      >
-        <WorkExperience experiences={experiences} />
-      </section> */}
-      <section
-        id="skills"
-        className="snap-start scroll-smooth transition duration-300 ease-in-out"
-      >
-        <Skills skills={skills} />
-      </section>
-      <section
-        id="projects"
-        className="snap-center scroll-smooth transition duration-300 ease-in-out"
-      >
-        <Projects projects={projects} />
-      </section>
-      <section
-        id="contact"
-        className="hidden snap-center scroll-smooth transition duration-300 ease-in-out"
-      >
-        <Contact />
-      </section>
-      <Link href={"https://buncombe.tech/"}>
-        <footer className="sticky bottom-0 hidden">
-          <div>
-            <img
-              src="https://buncombe.tech/me_mask.jpg"
-              alt=""
-              className="w-20 h-20 z-30"
-            />
-          </div>
-        </footer>
-      </Link>
-      {/* <BreadCrumbs /> */}
-    </div>
-  );
+  return <></>;
 };
 
 export default Home;
