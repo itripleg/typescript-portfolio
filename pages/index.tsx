@@ -52,7 +52,7 @@ const Home = ({ pageInfo, skills, projects, socials, experiences }: Props) => {
       </section>
       <section
         id="experience"
-        className="snap-center scroll-smooth transition duration-300 ease-in-out"
+        className="hidden snap-center scroll-smooth transition duration-300 ease-in-out"
       >
         <WorkExperience experiences={experiences} />
       </section>
