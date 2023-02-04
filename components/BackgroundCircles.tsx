@@ -14,13 +14,13 @@ export default function BackgroundCircles({}: Props) {
         // borderRadius: ["20%", "20%", "50%", "80%", "20%"],
         // borderRadius: ["20%", "90%"],
       }}
-      transition={{ duration: 10, type: "spring" }}
+      transition={{ duration: 7, type: "spring" }}
       className="relative flex justify-center items-center"
     >
       <motion.div
         animate={{ opacity: 0.03 }}
-        transition={{ duration: 10 }}
-        className="absolute border border-[#dfcdcd] h-[200px] w-[200px]
+        transition={{ duration: 5 }}
+        className=" absolute border border-[#dfcdcd] h-[200px] w-[200px]
         rounded-full mt-52 animate-ping"
       />
       <motion.div
