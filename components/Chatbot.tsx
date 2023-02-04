@@ -17,7 +17,7 @@ export default function Chatbot({}: Props) {
       className="absolute bottom-0 right-0 z-30 m-8 hover:cursor-pointer hidden sm:block"
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ x: 0, opacity: 1, scale: 1 }}
-      transition={{ delay: 4, duration: 3 }}
+      transition={{ delay: 10, duration: 3 }}
     >
       {visible ? (
         // display chatbot
