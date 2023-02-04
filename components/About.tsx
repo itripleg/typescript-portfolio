@@ -62,8 +62,8 @@ export default function About({ pageInfo }: Props) {
               className="underline"
             >
               Github. Also infused with
-              <Link href="https://sanity.io/">Sanity.io!</Link>
             </Link>
+            <Link href="https://sanity.io/">Sanity.io!</Link>
           </p>
         </motion.div>
       </div>
