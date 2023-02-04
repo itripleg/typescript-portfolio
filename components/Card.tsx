@@ -8,8 +8,8 @@ export default function Card({ experience, experiences }: Props) {
   // console.log(experience);
   return (
     <article
-      className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 h-[7/8hv] mt-28 [400px]
-    w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-white/5 p-10 "
+      className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 h-[7/8hv] mt-28
+    w-[300px] md:w-[600px] xl:w-[900px] snap-center bg-white/5 p-10 "
     >
       <motion.img
         src={urlFor(experience?.companyImage).url()}
@@ -23,7 +23,7 @@ export default function Card({ experience, experiences }: Props) {
         <h4 className="text-2xl md:text-4xl font-light">
           {experience.jobTitle}
         </h4>
-        <p className="font-bold text-xl md:text-2xl mt-l">
+        <p className="hidden md:block font-bold text-xl md:text-2xl mt-l">
           {experience.company}
         </p>
         <div className="flex space-x-2 my-2 justify-center">

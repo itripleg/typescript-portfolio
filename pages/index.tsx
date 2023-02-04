@@ -16,7 +16,7 @@ import { fetchSocials } from "../utils/fetchSocials";
 import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { fetchExperiences } from "../utils/fetchExperiences";
 import { fetchProjects } from "../utils/fetchProjects";
-import BreadCrumbs from "../components/BreadCrumbs";
+import Breadcrumbs from "nextjs-breadcrumbs";
 
 type Props = {
   pageInfo: PageInfo;
@@ -33,6 +33,9 @@ const Home = ({ pageInfo, skills, projects, socials, experiences }: Props) => {
       className="bg-[rgb(36,36,36)] text-white h-screen
     snap-y snap-mandatory z-0 overflow-x-hidden scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-white"
     >
+      <div className="absolute bottom-0">
+        {/* <Breadcrumbs useDefaultStyle rootLabel="Home" /> */}
+      </div>
       <Head>
         <title>Josh Bell Dev</title>
       </Head>
@@ -47,12 +50,12 @@ const Home = ({ pageInfo, skills, projects, socials, experiences }: Props) => {
       >
         <About pageInfo={pageInfo} />
       </section>
-      {/* <section
+      <section
         id="experience"
         className="snap-center scroll-smooth transition duration-300 ease-in-out"
       >
         <WorkExperience experiences={experiences} />
-      </section> */}
+      </section>
       <section
         id="skills"
         className="snap-start scroll-smooth transition duration-300 ease-in-out"
