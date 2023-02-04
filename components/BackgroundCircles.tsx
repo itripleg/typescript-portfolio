@@ -8,21 +8,23 @@ export default function BackgroundCircles({}: Props) {
       initial={{ opacity: 0 }}
       animate={{
         y: -20,
-        scale: [1, 2, 2, 3, 1],
-        opacity: [0.1, 0.2, 0.4, 0.8, 0.1, 0.1],
-        borderRadius: ["20%", "20%", "50%", "80%", "20%"],
+        scale: [1, 2, 1.2],
+        // opacity: [0.1, 0.2, 0.4, 0.8, 0.1, 0.1],
+        opacity: 1,
+        // borderRadius: ["20%", "20%", "50%", "80%", "20%"],
         // borderRadius: ["20%", "90%"],
       }}
+      transition={{ duration: 10, type: "spring" }}
       className="relative flex justify-center items-center"
     >
       <motion.div
-        animate={{ opacity: 0 }}
+        animate={{ opacity: 0.03 }}
         transition={{ duration: 10 }}
         className="absolute border border-[#dfcdcd] h-[200px] w-[200px]
         rounded-full mt-52 animate-ping"
       />
       <motion.div
-        animate={{ opacity: 0 }}
+        animate={{ opacity: 0.03 }}
         transition={{ duration: 10 }}
         className="absolute border border-gray-400 h-[300px] w-[300px]
         rounded-full mt-52"
