@@ -63,7 +63,7 @@ export default function About({ pageInfo }: Props) {
             >
               Github. Also infused with
             </Link>
-            <Link href="https://sanity.io/">Sanity.io!</Link>
+            <Link href="https://sanity.io/"> Sanity.io!</Link>
           </p>
         </motion.div>
       </div>
