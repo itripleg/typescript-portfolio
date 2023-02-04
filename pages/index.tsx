@@ -70,7 +70,7 @@ const Home = ({ pageInfo, skills, projects, socials, experiences }: Props) => {
       </section>
       <section
         id="contact"
-        className="snap-center scroll-smooth transition duration-300 ease-in-out"
+        className=" snap-center scroll-smooth transition duration-300 ease-in-out"
       >
         <Contact />
       </section>
