@@ -32,7 +32,8 @@ export default function Hero({ pageInfo }: Props) {
     <>
       <motion.div
         className="h-screen flex flex-col space-y-8
-        items-center justify-center overflow-hidden text-center relative"
+        items-center justify-center overflow-hidden text-center relative
+        z-40"
       >
         <BackgroundCircles />
         {/* <Image
