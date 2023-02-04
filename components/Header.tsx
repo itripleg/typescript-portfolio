@@ -7,7 +7,7 @@ type Props = { socials: Social[] };
 
 export default function Header({ socials }: Props) {
   return (
-    <header className="sticky top-0 flex justify-between max-w-7xl mx-auto z-20 p-5">
+    <header className="sticky top-0 flex justify-between max-w-7xl mx-auto z-50 p-5">
       <motion.div
         className="flex flex-row items-center"
         initial={{ x: -500, opacity: 0, scale: 0.5 }}
