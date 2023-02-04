@@ -8,7 +8,7 @@ export default function Card({ experience, experiences }: Props) {
   // console.log(experience);
   return (
     <article
-      className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 h-[7/8hv] mt-28
+      className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 max-h-[600px] max-w-[500px] mt-28
     w-[300px] md:w-[600px] xl:w-[900px] snap-center bg-white/5 p-10 "
     >
       <motion.img
@@ -17,7 +17,7 @@ export default function Card({ experience, experiences }: Props) {
         transition={{ duration: 3 }}
         whileInView={{ opacity: 1, x: 0 }}
         className="w-32 h-32 xl:w-[200px] xl:h-[200px] rounded-full
-        object-cover object-center"
+        object-cover object-center border border-white/20"
       />
       <div>
         <h4 className="text-2xl md:text-4xl font-light">
