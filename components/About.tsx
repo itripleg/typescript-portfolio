@@ -44,26 +44,30 @@ export default function About({ pageInfo }: Props) {
             Full Stack developer. Crypto and Blockchain enthusiast. I love
             working with bleeding-edge technology and helping decentralize the
             web. Based in Asheville, North Carolina. I built this page with
-            💖using
+            💖using{" "}
             <Link href="http://nextjs.org" className="underline">
               Next.js
-            </Link>
-            and
+            </Link>{" "}
+            and{" "}
             <Link href="http://tailwindcss.com" className="underline">
               Tailwind CSS
             </Link>
-            . Hosted on
+            . Hosted on{" "}
             <Link href="https://www.netlify.com/" className="underline">
               Netlify
-            </Link>
-            via handwritten code in my
+            </Link>{" "}
+            via handwritten code in my{" "}
             <Link
               href="https://github.com/itripleg/next-portfolio-code"
               className="underline"
             >
-              Github. Also infused with
+              Github.
+            </Link>{" "}
+            Also infused with{" "}
+            <Link href="https://sanity.io/" className="underline">
+              {" "}
+              Sanity.io!
             </Link>
-            <Link href="https://sanity.io/"> Sanity.io!</Link>
           </p>
         </motion.div>
       </div>
