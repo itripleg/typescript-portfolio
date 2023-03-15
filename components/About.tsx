@@ -11,7 +11,7 @@ export default function About({ pageInfo }: Props) {
       className="flex flex-col relative h-screen
     text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center"
     >
-      <h3 className="absolute top-16 md:top-24 uppercase tracking-[20px] text-gray-200/90 text-2xl z-20">
+      <h3 className="absolute top-16 md:top-24 uppercase tracking-[20px] text-gray-200/90 text-2xl ">
         About
       </h3>
       <motion.img
