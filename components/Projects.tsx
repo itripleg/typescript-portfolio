@@ -19,26 +19,35 @@ export default function Projects({ projects }: Props) {
         className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x
       snap-mandatory z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-white"
       >
-        {projects.map((project) => (
-          <div
-            key={project._id}
-            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
-          >
-            <motion.img
-              src={urlFor(project.image).url()}
-              alt=""
-              className="max-w-[50vh] h-40"
-              initial={{ opacity: 0, y: -200 }}
-              transition={{ duration: 0.5 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
-            />
-            <div>
-              <h1 className="text-4xl py-4">{project.name}</h1>
-              <h4 className="text-white/50">{project.summary}</h4>
-            </div>
-          </div>
-        ))}
+        {projects.map(
+          (project) =>
+            project && (
+              <div
+                key={project._id}
+                className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
+              >
+                {project.image && (
+                  <motion.img
+                    src={urlFor(project.image).url()}
+                    alt=""
+                    className="max-w-[50vh] h-40"
+                    initial={{ opacity: 0, y: -200 }}
+                    transition={{ duration: 0.5 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false }}
+                  />
+                )}
+                <div>
+                  {project.name && (
+                    <h1 className="text-4xl py-4">{project.name}</h1>
+                  )}
+                  {project.summary && (
+                    <h4 className="text-white/50">{project.summary}</h4>
+                  )}
+                </div>
+              </div>
+            )
+        )}
       </div>
       <motion.div
         // initial={{ opacity: 0 }}
