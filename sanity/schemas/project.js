@@ -26,5 +26,10 @@ export default {
       type: "image",
       options: { hotspot: true },
     },
+    {
+      name: "url", // Add new 'url' field to the schema
+      title: "URL",
+      type: "url",
+    },
   ],
 };
