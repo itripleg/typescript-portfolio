@@ -39,6 +39,7 @@ export interface Project extends SanityBody{
     name: string;
     summary: string;
     technologies: Technology[];
+    url: string; // Add new 'url' property to the Project type
 }
 
 interface Technology extends SanityBody{
