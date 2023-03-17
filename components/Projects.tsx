@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Link from "next/link";
 import React from "react";
 import { urlFor } from "../sanity";
 import { Project } from "../typings";
@@ -36,7 +37,14 @@ export default function Projects({ projects }: Props) {
             />
             <div>
               <h1 className="text-4xl py-4">{project.name}</h1>
-              <h4 className="text-white/50">{project.summary}</h4>
+              {project.url ? (
+                <a className="text-white/50 text-sm pb-0" href={project.url}>
+                  {project.url}
+                </a>
+              ) : (
+                <div></div>
+              )}
+              <h4 className="text-white/50 py-6">{project.summary}</h4>
             </div>
           </div>
         ))}
