@@ -10,7 +10,7 @@ type Props = { pageInfo: PageInfo };
 export default function Hero({ pageInfo }: Props) {
   const [text, count] = useTypewriter({
     words: [
-      `Sup, I'm ${pageInfo.name}. Full stack dev!`,
+      `I'm ${pageInfo.name}. Full stack dev!`,
       "Based in Asheville, NC 😎",
       "<Lets build something together/>",
       "Ready for Web3?",
@@ -45,7 +45,7 @@ export default function Hero({ pageInfo }: Props) {
           alt=""
         /> */}
         <img
-          src="https://buncombe.tech/me_mask.jpg"
+          src="https://joshb.netlify.app/me_mask.jpg"
           className=" w-32 h-32 rounded-full"
           alt=""
         />
@@ -59,7 +59,7 @@ export default function Hero({ pageInfo }: Props) {
             </span>
             <Cursor cursorColor="#2f4aaa" />
           </h1>
-        </div>{" "}
+        </div>
         <div className="pt-5 z-20">
           <button
             className="heroButton"
